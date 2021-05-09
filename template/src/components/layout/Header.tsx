@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { AppBar, IconButton, Toolbar, Typography, makeStyles } from '@material-ui/core'
+import { AppBar, IconButton, Toolbar, Typography, makeStyles, Theme } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import NavigationDrawer from 'components/layout/NavigationDrawer'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
   },

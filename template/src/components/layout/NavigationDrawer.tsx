@@ -11,6 +11,7 @@ import {
   useMediaQuery,
   makeStyles,
   Toolbar,
+  Theme,
 } from '@material-ui/core'
 import { Inbox as InboxIcon, Mail as MailIcon } from '@material-ui/icons'
 import clsx from 'clsx'
@@ -19,7 +20,7 @@ interface Props {
   DrawerProps: DrawerPropTypes
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   drawerWidth: {
     width: theme.mixins.drawer.width,
     maxWidth: '90vw',
