@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Typography, Link } from '@material-ui/core'
+import { Link as RouterLink } from 'react-router-dom'
 
 const About = () => (
-  <div>
-    <h1>About</h1>
-    <Link to="/">Go to Home</Link>
-  </div>
+  <>
+    <Typography variant="h1">About</Typography>
+    <Link component={RouterLink} to="/">
+      Go Home
+    </Link>
+  </>
 )
 
 export default About

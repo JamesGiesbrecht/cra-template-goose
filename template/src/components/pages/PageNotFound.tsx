@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Typography, Link } from '@material-ui/core'
+import { Link as RouterLink } from 'react-router-dom'
 
 const PageNotFound = () => (
-  <div>
-    <h1>404 Page not found</h1>
-    <Link to="/">Go to Home</Link>
-  </div>
+  <>
+    <Typography variant="h4">404 Page not found</Typography>
+    <Link component={RouterLink} to="/">
+      Go Home
+    </Link>
+  </>
 )
 
 export default PageNotFound
