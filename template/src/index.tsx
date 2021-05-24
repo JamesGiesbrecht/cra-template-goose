@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import { ColorSchemeContextProvider } from 'context/Theme'
-import 'index.css'
+import 'styles/index.css'
 import App from 'App'
 import reportWebVitals from 'reportWebVitals'
 

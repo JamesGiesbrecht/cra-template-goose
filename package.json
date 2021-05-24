@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "author": "James Giesbrecht <giesbrechtjames@gmail.com>",
   "main": "template.json",
-  "description": "A Create React App template with React Router, Material UI, Eslint, Prettier, and Typescript",
+  "description": "A Create React App template with React Router, Material UI, Eslint, Prettier, and Typescript with a basic layout and routes configured.",
   "files": [
     "template",
     "template.json"
-  ]
+  ],
+  "scripts": {
+    "create": "cd .. && npx create-react-app my-app --use-npm --template file:cra-template-goose"
+  }
 }

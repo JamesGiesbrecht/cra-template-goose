@@ -52,7 +52,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+            Header
           </Typography>
           <div className={classes.grow} />
           {themeButton}
