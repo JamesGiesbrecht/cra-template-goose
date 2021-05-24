@@ -2,12 +2,34 @@
   "name": "cra-template-goose",
   "version": "0.1.0",
   "author": "James Giesbrecht <giesbrechtjames@gmail.com>",
+  "license": "MIT",
   "main": "template.json",
   "description": "A Create React App template with React Router, Material UI, Eslint, Prettier, and Typescript with a basic layout and routes configured.",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "cra-template",
+    "template",
+    "react-router",
+    "react-router-dom",
+    "typescript",
+    "eslint",
+    "prettier",
+    "material-ui",
+    "dark mode"
+  ],
   "files": [
     "template",
     "template.json"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesGiesbrecht/cra-template-goose",
+    "directory": "/"
+  },
+  "bugs": {
+    "url": "https://github.com/JamesGiesbrecht/cra-template-goose/issues"
+  },
   "scripts": {
     "create": "cd .. && npx create-react-app my-app --use-npm --template file:cra-template-goose"
   }
