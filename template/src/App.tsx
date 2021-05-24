@@ -1,7 +1,6 @@
 import { ThemeProvider, CssBaseline, StyledEngineProvider } from '@material-ui/core'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Layout from 'components/layout/Layout'
-import PageNotFound from 'components/pages/PageNotFound'
 import getTheme from 'styles/theme'
 import Routes from 'constants/Routes'
 import { useColorScheme } from 'context/Theme'
@@ -26,9 +25,6 @@ const App = () => {
           <Layout>
             <Switch>
               {routes}
-              <Route path="*">
-                <PageNotFound />
-              </Route>
             </Switch>
           </Layout>
         </ThemeProvider>

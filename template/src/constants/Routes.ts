@@ -1,6 +1,7 @@
+import { Home as HomeIcon, Info as InfoIcon } from '@material-ui/icons'
 import About from 'components/pages/About'
 import Home from 'components/pages/Home'
-import { Home as HomeIcon, Info as InfoIcon } from '@material-ui/icons'
+import PageNotFound from 'components/pages/PageNotFound'
 
 export default [
   {
@@ -20,4 +21,9 @@ export default [
       icon: InfoIcon,
     },
   },
+  // 404 route, must be last
+  {
+    path: '*',
+    component: PageNotFound
+  }
 ]
