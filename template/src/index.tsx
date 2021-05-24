@@ -1,12 +1,15 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
+import { ColorSchemeContextProvider } from 'context/Theme'
 import 'index.css'
 import App from 'App'
 import reportWebVitals from 'reportWebVitals'
 
 ReactDOM.render(
   <StrictMode>
-    <App />
+    <ColorSchemeContextProvider>
+      <App />
+    </ColorSchemeContextProvider>
   </StrictMode>,
   document.getElementById('root'),
 )

@@ -4,9 +4,6 @@ import { Link as RouterLink } from 'react-router-dom'
 const Home = () => (
   <>
     <Typography variant="h1">Home</Typography>
-    <Link component={RouterLink} to="/about">
-      Go to About
-    </Link>
     <Typography paragraph>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
       labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo
@@ -29,6 +26,9 @@ const Home = () => (
       Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas accumsan lacus
       vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
     </Typography>
+    <Link component={RouterLink} to="/about">
+      Go to About
+    </Link>
   </>
 )
 

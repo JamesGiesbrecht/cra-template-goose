@@ -19,8 +19,11 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'jest', 'prettier'],
   rules: {
     'import/extensions': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
     'no-underscore-dangle': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
     'object-curly-newline': ['error', { ObjectPattern: { multiline: true } }],
     semi: ['error', 'never'],
     'react/prop-types': 'off',

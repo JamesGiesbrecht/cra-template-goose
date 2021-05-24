@@ -1,11 +1,20 @@
 import { useState } from 'react'
 import { AppBar, IconButton, Toolbar, Typography, makeStyles, Theme } from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
+import {
+  Menu as MenuIcon,
+  Brightness7 as SunIcon,
+  Brightness3 as MoonIcon,
+} from '@material-ui/icons'
 import NavigationDrawer from 'components/layout/NavigationDrawer'
+import { useColorScheme } from 'context/Theme'
 
 const useStyles = makeStyles((theme: Theme) => ({
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
+    display: 'flex',
+  },
+  grow: {
+    flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -18,6 +27,13 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Header = () => {
   const classes = useStyles()
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const { colorScheme, toggleColorScheme } = useColorScheme()
+
+  const themeButton = (
+    <IconButton color="inherit" onClick={toggleColorScheme}>
+      {colorScheme === 'dark' ? <SunIcon /> : <MoonIcon />}
+    </IconButton>
+  )
 
   const handleDrawerToggle = () => {
     setIsDrawerOpen(!isDrawerOpen)
@@ -38,6 +54,8 @@ const Header = () => {
           <Typography variant="h6" noWrap component="div">
             Responsive drawer
           </Typography>
+          <div className={classes.grow} />
+          {themeButton}
         </Toolbar>
       </AppBar>
       <NavigationDrawer

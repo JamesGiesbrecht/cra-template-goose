@@ -1,11 +1,10 @@
-import { FC } from 'react'
+import { FC, forwardRef } from 'react'
 import {
   Drawer,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider,
   DrawerProps as DrawerPropTypes,
   useTheme,
   useMediaQuery,
@@ -13,8 +12,9 @@ import {
   Toolbar,
   Theme,
 } from '@material-ui/core'
-import { Inbox as InboxIcon, Mail as MailIcon } from '@material-ui/icons'
+import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import clsx from 'clsx'
+import Routes from 'constants/Routes'
 
 interface Props {
   DrawerProps: DrawerPropTypes
@@ -38,6 +38,25 @@ const NavigationDrawer: FC<Props> = ({ DrawerProps }) => {
   const theme = useTheme()
   const isDesktop = useMediaQuery(theme.mixins.drawer.visibleBreakpoint)
 
+  const renderLink = (to: string) =>
+    forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, 'to'>>((itemProps, ref) => (
+      <RouterLink to={to} ref={ref} {...itemProps} />
+    ))
+
+  const navItems = Routes.map((route) => {
+    if (!route.nav) return null // Removing item
+    const Icon = route.nav.icon
+    const link = renderLink(route.path)
+    return (
+      <ListItem key={route.path} button component={link}>
+        <ListItemIcon>
+          <Icon />
+        </ListItemIcon>
+        <ListItemText primary={route.nav.label} />
+      </ListItem>
+    )
+  })
+
   return (
     <Drawer
       {...DrawerProps}
@@ -47,23 +66,7 @@ const NavigationDrawer: FC<Props> = ({ DrawerProps }) => {
         paper: clsx(classes.paper, classes.drawerWidth),
       }}>
       {isDesktop && <Toolbar />}
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <List>{navItems}</List>
     </Drawer>
   )
 }
