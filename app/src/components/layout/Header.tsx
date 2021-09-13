@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { AppBar, IconButton, Toolbar, Typography, Theme } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { AppBar, IconButton, Toolbar, Typography, Theme } from '@mui/material'
+import makeStyles from '@mui/styles/makeStyles'
 import {
   Menu as MenuIcon,
   Brightness7 as SunIcon,
@@ -40,32 +40,35 @@ const Header = () => {
     setIsDrawerOpen(!isDrawerOpen)
   }
 
-  return <>
-    <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
-          onClick={handleDrawerToggle}
-          className={classes.menuButton}
-          size="large">
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          Header
-        </Typography>
-        <div className={classes.grow} />
-        {themeButton}
-      </Toolbar>
-    </AppBar>
-    <NavigationDrawer
-      DrawerProps={{
-        open: isDrawerOpen,
-        onClose: () => setIsDrawerOpen(false),
-      }}
-    />
-  </>;
+  return (
+    <>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            className={classes.menuButton}
+            size="large"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap component="div">
+            Header
+          </Typography>
+          <div className={classes.grow} />
+          {themeButton}
+        </Toolbar>
+      </AppBar>
+      <NavigationDrawer
+        DrawerProps={{
+          open: isDrawerOpen,
+          onClose: () => setIsDrawerOpen(false),
+        }}
+      />
+    </>
+  )
 }
 
 export default Header

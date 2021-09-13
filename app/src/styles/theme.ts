@@ -1,11 +1,11 @@
-import { createTheme, Theme, adaptV4Theme } from '@mui/material/styles';
+import { createTheme, Theme, adaptV4Theme } from '@mui/material/styles'
 import { red, pink, teal } from '@mui/material/colors'
 import { PaletteMode } from '@mui/material'
 
 // Edit this function for global theme overrides
 const getTheme = (colorScheme: PaletteMode): Theme => {
   const defaultTheme = createTheme(adaptV4Theme({ palette: { mode: colorScheme } }))
-  createTheme(adaptV4Theme({
+  return createTheme({
     mixins: {
       header: {
         height: 50,
@@ -23,7 +23,7 @@ const getTheme = (colorScheme: PaletteMode): Theme => {
       secondary: pink,
       error: red,
     },
-  }))
+  })
 }
 
 export default getTheme

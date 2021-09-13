@@ -24,6 +24,6 @@ export default [
   // 404 route, must be last
   {
     path: '*',
-    component: PageNotFound
-  }
+    component: PageNotFound,
+  },
 ]

@@ -43,7 +43,6 @@ module.exports = {
     'prettier/prettier': [
       'warn',
       {
-        jsxBracketSameLine: true,
         singleQuote: true,
         trailingComma: 'all',
         printWidth: 100,
