@@ -1,7 +1,7 @@
 import React from 'react'
-import { HiddenProps } from '@material-ui/core'
+import { HiddenProps } from '@mui/material'
 
-declare module '@material-ui/core/styles/createMixins' {
+declare module '@mui/material/styles/createMixins' {
   export interface Mixins {
     header: {
       height: React.CSSProperties['height']
@@ -17,8 +17,8 @@ declare module '@material-ui/core/styles/createMixins' {
   export interface MixinsOptions extends Partial<Mixins> {}
 }
 
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module '@mui/material/styles/createMuiTheme' {
   export interface Theme {}
   // adding custom properties to `createMuiTheme`
-  export interface ThemeOptions extends Partial<Theme> {}
+  export interface DeprecatedThemeOptions extends Partial<Theme> {}
 }

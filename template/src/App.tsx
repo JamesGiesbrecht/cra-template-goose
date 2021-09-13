@@ -1,4 +1,4 @@
-import { ThemeProvider, CssBaseline, StyledEngineProvider } from '@material-ui/core'
+import { ThemeProvider, CssBaseline, StyledEngineProvider } from '@mui/material'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Layout from 'components/layout/Layout'
 import getTheme from 'styles/theme'
@@ -20,12 +20,9 @@ const App = () => {
       {/* TODO v5: remove once migration to emotion is completed */}
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Layout>
-            <Switch>
-              {routes}
-            </Switch>
+            <Switch>{routes}</Switch>
           </Layout>
         </ThemeProvider>
       </StyledEngineProvider>

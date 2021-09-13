@@ -1,11 +1,11 @@
-import { createTheme, Theme } from '@material-ui/core/styles'
-import { red, pink, teal } from '@material-ui/core/colors'
-import { PaletteMode } from '@material-ui/core'
+import { createTheme, Theme, adaptV4Theme } from '@mui/material/styles'
+import { red, pink, teal } from '@mui/material/colors'
+import { PaletteMode } from '@mui/material'
 
 // Edit this function for global theme overrides
 const getTheme = (colorScheme: PaletteMode): Theme => {
-  const defaultTheme = createTheme({ palette: { mode: colorScheme } })
-  createTheme({
+  const defaultTheme = createTheme(adaptV4Theme({ palette: { mode: colorScheme } }))
+  return createTheme({
     mixins: {
       header: {
         height: 50,
@@ -13,7 +13,7 @@ const getTheme = (colorScheme: PaletteMode): Theme => {
       drawer: {
         width: 250,
         hidden: { mdDown: true },
-        hiddenBreakpoint: defaultTheme.breakpoints.down('md'),
+        hiddenBreakpoint: defaultTheme.breakpoints.down('lg'),
         visibleBreakpoint: defaultTheme.breakpoints.up('md'),
       },
     },

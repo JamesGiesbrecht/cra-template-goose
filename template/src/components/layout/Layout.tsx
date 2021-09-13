@@ -1,5 +1,6 @@
 import { FC } from 'react'
-import { Box, Container, makeStyles, Toolbar } from '@material-ui/core'
+import { Box, Container, Toolbar } from '@mui/material'
+import makeStyles from '@mui/styles/makeStyles'
 import Header from 'components/layout/Header'
 
 interface Props {
