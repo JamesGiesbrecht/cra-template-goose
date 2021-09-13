@@ -31,7 +31,7 @@
     "url": "https://github.com/JamesGiesbrecht/cra-template-goose/issues"
   },
   "scripts": {
-    "create:local": "cd .. && npx create-react-app my-app --use-npm --template file:cra-template-goose",
+    "create:local": "npx create-react-app app --template file:../cra-template-goose",
     "create:npm": "npx create-react-app your-project-name --use-npm --template goose"
   }
 }
