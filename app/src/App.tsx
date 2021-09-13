@@ -1,9 +1,16 @@
-import { ThemeProvider, CssBaseline, StyledEngineProvider } from '@material-ui/core'
+import { ThemeProvider, Theme, CssBaseline, StyledEngineProvider } from '@mui/material';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Layout from 'components/layout/Layout'
 import getTheme from 'styles/theme'
 import Routes from 'constants/Routes'
 import { useColorScheme } from 'context/Theme'
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 
 const App = () => {
   const { colorScheme } = useColorScheme()

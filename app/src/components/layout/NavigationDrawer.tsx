@@ -8,10 +8,10 @@ import {
   DrawerProps as DrawerPropTypes,
   useTheme,
   useMediaQuery,
-  makeStyles,
   Toolbar,
   Theme,
-} from '@material-ui/core'
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import clsx from 'clsx'
 import Routes from 'constants/Routes'

@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext, createContext, FC } from 'react'
-import { PaletteMode, useMediaQuery } from '@material-ui/core'
+import { PaletteMode, useMediaQuery } from '@mui/material'
 
 interface ColorSchemeType {
   colorScheme: PaletteMode
