@@ -33,7 +33,7 @@
   "scripts": {
     "start": "cd app && yarn start",
     "pub": "np --no-tests",
-    "create:local": "rm -r app && npx create-react-app app --template file:.",
+    "create:local": "rm -rf app && npx create-react-app app --template file:.",
     "create:npm": "npx create-react-app your-project-name --use-npm --template goose"
   }
 }
