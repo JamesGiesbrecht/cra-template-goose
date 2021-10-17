@@ -1,6 +1,6 @@
 {
   "name": "cra-template-goose",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "James Giesbrecht <giesbrechtjames@gmail.com>",
   "license": "MIT",
   "main": "template.json",
