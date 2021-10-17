@@ -14,7 +14,7 @@ import {
 import makeStyles from '@mui/styles/makeStyles'
 import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import clsx from 'clsx'
-import Routes from 'constants/Routes'
+import routes from 'constants/routes'
 
 interface Props {
   DrawerProps: DrawerPropTypes
@@ -43,15 +43,14 @@ const NavigationDrawer: FC<Props> = ({ DrawerProps }) => {
       <RouterLink to={to} ref={ref} {...itemProps} />
     ))
 
-  const navItems = Routes.map((route) => {
+  const navItems = Object.keys(routes).map((routeName) => {
+    const route = routes[routeName]
     if (!route.nav) return null // Removing item
-    const Icon = route.nav.icon
+    const { Icon } = route.nav
     const link = renderLink(route.path)
     return (
       <ListItem key={route.path} button component={link}>
-        <ListItemIcon>
-          <Icon />
-        </ListItemIcon>
+        <ListItemIcon>{Icon && <Icon />}</ListItemIcon>
         <ListItemText primary={route.nav.label} />
       </ListItem>
     )

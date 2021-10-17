@@ -2,16 +2,20 @@ import { ThemeProvider, CssBaseline, StyledEngineProvider } from '@mui/material'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Layout from 'components/layout/Layout'
 import getTheme from 'styles/theme'
-import Routes from 'constants/Routes'
+import routes from 'constants/routes'
 import { useColorScheme } from 'context/Theme'
 
 const App = () => {
   const { colorScheme } = useColorScheme()
-  const routes = Routes.map((route) => (
-    <Route key={route.path} exact={route.exact} path={route.path}>
-      {route.component}
-    </Route>
-  ))
+  const appRoutes = Object.keys(routes).map((routeName) => {
+    const route = routes[routeName]
+    const { Component, path, props } = route
+    return (
+      <Route key={path} path={path} {...props}>
+        <Component />
+      </Route>
+    )
+  })
 
   const theme = getTheme(colorScheme)
 
@@ -22,7 +26,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Layout>
-            <Switch>{routes}</Switch>
+            <Switch>{appRoutes}</Switch>
           </Layout>
         </ThemeProvider>
       </StyledEngineProvider>
