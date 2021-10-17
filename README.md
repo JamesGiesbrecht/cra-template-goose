@@ -30,7 +30,7 @@ npm start
 
 ## Routes
 
-Routes can be added to the project in `constants/Routes.ts`.
+Routes can be added to the project in `constants/routes.tsx`.
 If a `nav` property is included the route will be automatically added to the drawer navigation.
 
 ## Theming
