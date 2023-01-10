@@ -19,9 +19,6 @@ const routes: { [name: string]: Route } = {
   home: {
     path: '/',
     Component: Home,
-    props: {
-      exact: true,
-    },
     nav: {
       label: 'Home',
       Icon: HomeIcon,

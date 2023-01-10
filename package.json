@@ -33,7 +33,9 @@
   "scripts": {
     "start": "cd app && yarn start",
     "pub": "np --no-tests",
-    "create:local": "rm -rf app && npx create-react-app app --template file:.",
-    "create:npm": "npx create-react-app your-project-name --use-npm --template goose"
+    "create:local": "rm -rf app && yarn create react-app app --template file:.",
+    "create:npm": "npx create-react-app your-project-name --use-npm --template goose",
+    "create:yarn": "yarn create react-app your-project-name --template goose",
+    "update-dependencies": "cd app && yarn add react-router-dom @mui/material @mui/icons-material @mui/styles clsx @emotion/react @emotion/styled @types/react-router-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier"
   }
 }

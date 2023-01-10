@@ -33,15 +33,15 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
+const renderLink = (to: string) =>
+  forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, 'to'>>((itemProps, ref) => (
+    <RouterLink to={to} ref={ref} {...itemProps} />
+  ))
+
 const NavigationDrawer: FC<Props> = ({ DrawerProps }) => {
   const classes = useStyles()
   const theme = useTheme()
   const isDesktop = useMediaQuery(theme.mixins.drawer.visibleBreakpoint)
-
-  const renderLink = (to: string) =>
-    forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, 'to'>>((itemProps, ref) => (
-      <RouterLink to={to} ref={ref} {...itemProps} />
-    ))
 
   const navItems = Object.keys(routes).map((routeName) => {
     const route = routes[routeName]

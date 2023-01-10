@@ -1,5 +1,5 @@
 import { ThemeProvider, CssBaseline, StyledEngineProvider } from '@mui/material'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from 'components/layout/Layout'
 import getTheme from 'styles/theme'
 import routes from 'constants/routes'
@@ -10,11 +10,7 @@ const App = () => {
   const appRoutes = Object.keys(routes).map((routeName) => {
     const route = routes[routeName]
     const { Component, path, props } = route
-    return (
-      <Route key={path} path={path} {...props}>
-        <Component />
-      </Route>
-    )
+    return <Route key={path} path={path} element={<Component />} {...props} />
   })
 
   const theme = getTheme(colorScheme)
@@ -26,7 +22,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Layout>
-            <Switch>{appRoutes}</Switch>
+            <Routes>{appRoutes}</Routes>
           </Layout>
         </ThemeProvider>
       </StyledEngineProvider>

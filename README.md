@@ -9,7 +9,10 @@ Both of the following npx commands are also available locally with this repo wit
 #### Install
 
 ```bash
+## NPM
 npx create-react-app my-app --use-npm --template goose
+## Yarn
+yarn create react-app my-app --template goose
 cd my-app
 npm start
 ```
@@ -21,7 +24,10 @@ npm start
 #### Install Locally
 
 ```bash
+## NPM
 npx create-react-app my-app --use-npm --template file:./cra-template-goose
+## Yarn
+yarn create react-app my-app --template file:./cra-template-goose
 cd ../my-app
 npm start
 ```
